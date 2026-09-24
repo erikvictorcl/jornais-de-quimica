@@ -1,0 +1,8 @@
+{
+  "name": "Jornais de Química",
+  "description": "Coleção de materiais didáticos em formato de jornal temático para aulas e revisões de Química no Ensino Médio e Pré-Vestibular. Fórmulas, reações e conceitos de forma visual.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

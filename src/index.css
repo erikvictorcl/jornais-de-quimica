@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.font-editorial {
+  font-family: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
+}
+
+/* Custom scrollbar styling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Continuous Double Marquee Animations (Seamless Infinite Loop) */
+@keyframes marquee-to-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-to-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-to-left 48s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-to-right 48s linear infinite;
+}
+
+/* Maintain continuous motion under all circumstances */
+.animate-marquee-left:hover,
+.animate-marquee-left:active,
+.animate-marquee-left:focus,
+.animate-marquee-right:hover,
+.animate-marquee-right:active,
+.animate-marquee-right:focus {
+  animation-play-state: running !important;
+}
+
+/* ==========================================================================
+   BLOCO 2: Vintage Newsprint Paper Background (Beige/Cream #F2E8D3 with grain)
+   ========================================================================== */
+.bg-newsprint-texture {
+  background-color: #F0E6CF;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.45) 0%, rgba(226, 212, 185, 0.35) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45  0 0 0 0 0.38  0 0 0 0 0.28  0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperNoise)'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+/* ==========================================================================
+   BLOCO 3: Aurora Boreal Animated Gradient for Section Titles (6-8s cycle)
+   ========================================================================== */
+@keyframes aurora-text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.aurora-boreal-title {
+  color: #16332E;
+}
+
+/* ==========================================================================
+   BLOCO 5: Water Effects (Floating Bobbing & Water Layer Animations)
+   ========================================================================== */
+@keyframes water-bob {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.4deg);
+  }
+}
+
+@keyframes water-wave-flow {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) scaleY(1.15);
+  }
+  100% {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+@keyframes water-surface-shimmer {
+  0%, 100% {
+    opacity: 0.65;
+    transform: translateX(-10%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(10%);
+  }
+}
+
+@keyframes water-caustic-depth {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    opacity: 0.26;
+    transform: scale(1.05) translateY(-4px);
+  }
+}
+
+.animate-water-wave {
+  animation: water-wave-flow 8s ease-in-out infinite;
+}
+
+.animate-water-shimmer {
+  animation: water-surface-shimmer 4s ease-in-out infinite alternate;
+}
+
+.animate-water-depth {
+  animation: water-caustic-depth 6s ease-in-out infinite;
+}
+
