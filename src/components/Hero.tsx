@@ -133,7 +133,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                         className="w-full h-full object-cover select-none"
                         loading="eager"
                         fetchPriority="high"
-                        decoding="sync"
+                        decoding="async"
                         width="640"
                         height="380"
                       />
