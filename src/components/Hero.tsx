@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         {/* Main Central Card Container */}
         <div 
           id="hero-card"
-          className="bg-white rounded-[22px] border border-[#E6DFD3] shadow-[0_12px_40px_rgba(0,0,0,0.06)] p-5 sm:p-10 md:p-12 text-center transition-all duration-300 relative overflow-hidden"
+          className="bg-white rounded-[22px] border border-[#E6DFD3] shadow-[0_12px_40px_rgba(0,0,0,0.06)] p-5 sm:p-10 md:p-12 text-center relative overflow-hidden"
         >
           {/* 2. Main Title (H1) with Editorial Serif */}
           <h1 
@@ -126,14 +126,14 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                     <div className="bg-[#0F172A] rounded-t-sm sm:rounded-md overflow-hidden aspect-[16/9.5] sm:aspect-[16/9.2] flex flex-col border border-slate-700 text-left relative shadow-inner">
                       <img 
                         src="https://i.imgur.com/sQexVEMl.jpeg"
-                        srcSet="https://i.imgur.com/sQexVEMl.jpeg 640w, https://i.imgur.com/sQexVEMh.jpeg 1024w, https://i.imgur.com/sQexVEM.jpeg 1280w"
-                        sizes="(max-width: 640px) 340px, (max-width: 1024px) 640px, 720px"
+                        srcSet="https://i.imgur.com/sQexVEMm.jpeg 320w, https://i.imgur.com/sQexVEMl.jpeg 640w, https://i.imgur.com/sQexVEMh.jpeg 1024w"
+                        sizes="(max-width: 640px) 240px, (max-width: 1024px) 520px, 640px"
                         alt="Jornais de Química na tela do notebook" 
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover select-none"
                         loading="eager"
                         fetchPriority="high"
-                        decoding="async"
+                        decoding="sync"
                         width="640"
                         height="380"
                       />
