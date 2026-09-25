@@ -122,11 +122,17 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                     {/* Screen View */}
                     <div className="bg-[#0F172A] rounded-t-sm sm:rounded-md overflow-hidden aspect-[16/9.5] sm:aspect-[16/9.2] flex flex-col border border-slate-700 text-left relative shadow-inner">
                       <img 
-                        src={NOTEBOOK_IMGUR_URL} 
+                        src="https://i.imgur.com/sQexVEMl.jpeg"
+                        srcSet="https://i.imgur.com/sQexVEMl.jpeg 640w, https://i.imgur.com/sQexVEMh.jpeg 1024w, https://i.imgur.com/sQexVEM.jpeg 1280w"
+                        sizes="(max-width: 640px) 340px, (max-width: 1024px) 640px, 720px"
                         alt="Jornais de Química na tela do notebook" 
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover select-none"
                         loading="eager"
+                        fetchPriority="high"
+                        decoding="async"
+                        width="640"
+                        height="380"
                       />
                     </div>
 
@@ -245,11 +251,16 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                     {/* Phone screen preview */}
                     <div className="flex-1 w-full h-full relative overflow-hidden bg-black">
                       <img 
-                        src={CELULAR_IMGUR_URL} 
+                        src="https://i.imgur.com/Wl2uZ8Fm.jpeg" 
+                        srcSet="https://i.imgur.com/Wl2uZ8Fm.jpeg 320w, https://i.imgur.com/Wl2uZ8Fl.jpeg 640w"
+                        sizes="(max-width: 640px) 64px, 128px"
                         alt="Jornal de Química no celular" 
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover select-none"
-                        loading="eager"
+                        loading="lazy"
+                        decoding="async"
+                        width="128"
+                        height="228"
                       />
                     </div>
                   </div>
@@ -269,11 +280,16 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                     className={`relative shrink-0 w-[110px] sm:w-[180px] md:w-[240px] lg:w-[285px] aspect-[3/4.2] rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.18)] border-2 sm:border-4 border-white transition-all duration-300 select-none pointer-events-none ${paper.rotation} ${paper.translateY} ${paper.zIndex}`}
                   >
                     <img
-                      src={paper.src}
+                      src={paper.src.replace('.jpeg', 'l.jpeg')}
+                      srcSet={`${paper.src.replace('.jpeg', 'm.jpeg')} 320w, ${paper.src.replace('.jpeg', 'l.jpeg')} 640w`}
+                      sizes="(max-width: 640px) 110px, (max-width: 1024px) 240px, 285px"
                       alt={paper.alt}
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover select-none pointer-events-none"
-                      loading="eager"
+                      loading="lazy"
+                      decoding="async"
+                      width="285"
+                      height="399"
                     />
                   </div>
                 ))}

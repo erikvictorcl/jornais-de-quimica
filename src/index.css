@@ -75,6 +75,18 @@
   background-attachment: fixed;
 }
 
+@media (max-width: 768px) {
+  .bg-newsprint-texture {
+    background-attachment: scroll;
+  }
+}
+
+/* Optimization: Content-visibility for below-the-fold sections */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
+}
+
 /* ==========================================================================
    BLOCO 3: Aurora Boreal Animated Gradient for Section Titles (6-8s cycle)
    ========================================================================== */

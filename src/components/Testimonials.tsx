@@ -210,11 +210,16 @@ export const Testimonials: React.FC = () => {
                   {/* Container da Imagem do Depoimento */}
                   <div className="w-full h-full bg-white rounded-[22px] sm:rounded-[26px] p-2 sm:p-2.5 border border-[#E6DFD3] shadow-[0_12px_36px_rgba(0,0,0,0.10)] flex items-center justify-center overflow-hidden hover:shadow-[0_16px_44px_rgba(0,0,0,0.14)] transition-shadow">
                     <img
-                      src={item.imageUrl}
+                      src={item.imageUrl.replace('.jpeg', 'l.jpeg')}
+                      srcSet={`${item.imageUrl.replace('.jpeg', 'm.jpeg')} 320w, ${item.imageUrl.replace('.jpeg', 'l.jpeg')} 640w, ${item.imageUrl} 941w`}
+                      sizes="(max-width: 640px) 275px, 350px"
                       alt={item.alt}
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-contain rounded-[16px] sm:rounded-[20px] select-none"
                       loading="lazy"
+                      decoding="async"
+                      width="350"
+                      height="580"
                       draggable={false}
                     />
                   </div>

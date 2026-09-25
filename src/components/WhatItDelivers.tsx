@@ -202,11 +202,16 @@ export const WhatItDelivers: React.FC = () => {
                 {/* Visual Bonus Image (Maintained size, generous padding) */}
                 <div className="relative z-10 w-full aspect-square max-w-[145px] sm:max-w-[160px] md:max-w-[170px] rounded-2xl overflow-hidden bg-[#FAF7F0] border-2 border-[#E6DFD3] shadow-[0_4px_16px_rgba(0,0,0,0.06)] mb-2 sm:mb-2.5 group-hover:scale-[1.03] transition-all duration-300 flex items-center justify-center">
                   <img 
-                    src={card.imageUrl} 
+                    src={card.imageUrl.replace('.jpeg', 'l.jpeg')} 
+                    srcSet={`${card.imageUrl.replace('.jpeg', 'm.jpeg')} 320w, ${card.imageUrl.replace('.jpeg', 'l.jpeg')} 640w`}
+                    sizes="(max-width: 640px) 145px, 170px"
                     alt={card.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover select-none"
                     loading="lazy"
+                    decoding="async"
+                    width="170"
+                    height="170"
                   />
                 </div>
 

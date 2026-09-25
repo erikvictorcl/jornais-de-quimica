@@ -227,11 +227,16 @@ const CleanNewspaperCard: React.FC<CleanNewspaperCardProps> = ({ paper, index = 
       {/* Newspaper Image Canvas - Exact uncropped framing (BLOCO 1: ensures top masthead is never cut) */}
       <div className="w-full aspect-[1/1.51] rounded-xl sm:rounded-lg overflow-hidden bg-[#FAF6EE] border border-[#E6DFD3]/80 relative shadow-inner p-1 sm:p-1.5 flex items-center justify-center">
         <img 
-          src={paper.imageUrl} 
+          src={paper.imageUrl.replace('.jpeg', 'l.jpeg')} 
+          srcSet={`${paper.imageUrl.replace('.jpeg', 'm.jpeg')} 320w, ${paper.imageUrl.replace('.jpeg', 'l.jpeg')} 640w`}
+          sizes="(max-width: 640px) 215px, (max-width: 1024px) 325px, 365px"
           alt={paper.alt}
           referrerPolicy="no-referrer"
           className="w-full h-full object-contain select-none"
           loading="lazy"
+          decoding="async"
+          width="325"
+          height="490"
         />
       </div>
     </div>
