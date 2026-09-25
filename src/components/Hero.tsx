@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           {/* 2. Main Title (H1) with Editorial Serif */}
           <h1 
             id="hero-heading"
-            className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-[#16332E] tracking-tight leading-[1.12] max-w-4xl mx-auto"
+            className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-[#16332E] tracking-tight leading-[1.12] max-w-4xl mx-auto min-h-[72px] sm:min-h-[88px] md:min-h-[115px] lg:min-h-[128px]"
           >
             <span className="text-[#059669]">+300</span> Jornais de <span className="text-[#059669] italic">Química</span> Prontos para Sala de Aula
           </h1>
@@ -102,15 +102,18 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           {/* 4. UNIFIED PRODUCT MOCKUP COMPOSITION */}
           <div 
             id="hero-mockup-container"
-            className="mt-7 sm:mt-10 mb-6 sm:mb-8 relative w-full max-w-[1040px] mx-auto select-none"
+            className="mt-7 sm:mt-10 mb-6 sm:mb-8 relative w-full max-w-[1040px] mx-auto select-none min-h-[415px] sm:min-h-[580px] md:min-h-[690px] lg:min-h-[780px]"
           >
-            <div className="relative flex flex-col items-center">
+            <div 
+              id="hero-composition-wrapper" 
+              className="hero-composition-wrapper relative flex flex-col items-center w-full"
+            >
               
               {/* BACK LAYER: CENTRAL LAPTOP + SMARTPHONE */}
-              <div className="relative w-full flex justify-center items-end px-2">
+              <div className="hero-back-layer relative w-full flex justify-center items-end px-2">
                 
                 {/* 1. CENTRAL NOTEBOOK */}
-                <div className="relative z-10 w-full max-w-[340px] sm:max-w-[520px] md:max-w-[640px] lg:max-w-[720px]">
+                <div className="hero-device-wrapper relative z-10 w-full max-w-[340px] sm:max-w-[520px] md:max-w-[640px] lg:max-w-[720px]">
                   
                   {/* Laptop Lid / Screen */}
                   <div className="bg-[#1E293B] rounded-t-[14px] sm:rounded-t-[18px] p-2 sm:p-2.5 shadow-[0_15px_40px_rgba(0,0,0,0.25)] border-t border-x border-[#334155] relative">
@@ -271,7 +274,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               {/* FOREGROUND LAYER: 5 PORTRAIT NEWSPAPER CARDS PLACED LOWER DOWN (EXPANDED SIZE) */}
               <div 
                 id="hero-cards-showcase-row"
-                className="relative -mt-5 sm:-mt-10 md:-mt-14 lg:-mt-18 z-30 w-full flex items-end justify-center -space-x-5 sm:-space-x-9 md:-space-x-12 lg:-space-x-16 px-1 select-none pointer-events-none"
+                className="relative -mt-5 sm:-mt-10 md:-mt-14 lg:-mt-18 z-30 w-full flex items-end justify-center -space-x-5 sm:-space-x-9 md:-space-x-12 lg:-space-x-16 px-1 select-none pointer-events-none min-h-[150px] sm:min-h-[220px] md:min-h-[280px] lg:min-h-[340px]"
               >
                 {foregroundNewspapers.map((paper) => (
                   <div

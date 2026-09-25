@@ -21,11 +21,39 @@
       rel="preload" 
       as="image" 
       href="https://i.imgur.com/sQexVEMl.jpeg" 
+      imagesrcset="https://i.imgur.com/sQexVEMl.jpeg 640w, https://i.imgur.com/sQexVEMh.jpeg 1024w, https://i.imgur.com/sQexVEM.jpeg 1280w"
+      imagesizes="(max-width: 640px) 340px, (max-width: 1024px) 640px, 720px"
       fetchpriority="high"
       type="image/jpeg"
     >
 
-    <!-- 3. Google Fonts não-bloqueante com pesos estritamente necessários e font-display: swap -->
+    <!-- 3. Critical CSS para estabilidade de layout imediata (Zero CLS desde o primeiro frame) -->
+    <style>
+      .hero-composition-wrapper {
+        width: 100%;
+        min-height: 415px;
+      }
+      .hero-device-wrapper {
+        width: 100%;
+        position: relative;
+        aspect-ratio: 340 / 278;
+        min-height: 278px;
+      }
+      @media (min-width: 640px) {
+        .hero-composition-wrapper { min-height: 580px; }
+        .hero-device-wrapper { aspect-ratio: 520 / 415; min-height: 415px; }
+      }
+      @media (min-width: 768px) {
+        .hero-composition-wrapper { min-height: 690px; }
+        .hero-device-wrapper { aspect-ratio: 640 / 488; min-height: 488px; }
+      }
+      @media (min-width: 1024px) {
+        .hero-composition-wrapper { min-height: 780px; }
+        .hero-device-wrapper { aspect-ratio: 720 / 542; min-height: 542px; }
+      }
+    </style>
+
+    <!-- 4. Google Fonts não-bloqueante com pesos estritamente necessários e font-display: swap -->
     <link 
       rel="preload" 
       as="style" 

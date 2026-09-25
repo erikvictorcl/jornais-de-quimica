@@ -88,6 +88,51 @@
 }
 
 /* ==========================================================================
+   PERFORMANCE: Hero Device Wrapper & Composition Dimension Reservations (CLS = 0)
+   ========================================================================== */
+.hero-composition-wrapper {
+  width: 100%;
+  min-height: 415px;
+}
+
+.hero-device-wrapper {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 340 / 278;
+  min-height: 278px;
+}
+
+@media (min-width: 640px) {
+  .hero-composition-wrapper {
+    min-height: 580px;
+  }
+  .hero-device-wrapper {
+    aspect-ratio: 520 / 415;
+    min-height: 415px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-composition-wrapper {
+    min-height: 690px;
+  }
+  .hero-device-wrapper {
+    aspect-ratio: 640 / 488;
+    min-height: 488px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-composition-wrapper {
+    min-height: 780px;
+  }
+  .hero-device-wrapper {
+    aspect-ratio: 720 / 542;
+    min-height: 542px;
+  }
+}
+
+/* ==========================================================================
    BLOCO 3: Aurora Boreal Animated Gradient for Section Titles (6-8s cycle)
    ========================================================================== */
 @keyframes aurora-text-shimmer {
