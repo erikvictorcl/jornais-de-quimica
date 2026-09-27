@@ -111,7 +111,7 @@ export const UpsellModal: React.FC<UpsellModalProps> = ({
           {/* 3. BLOCO DE UPGRADE */}
           <div className="bg-[#F0FDF4] border-2 border-[#86EFAC] rounded-[18px] p-3.5 sm:p-4 text-center shadow-xs">
             <p className="text-xs sm:text-sm font-semibold text-[#166534] leading-tight">
-              Por apenas <span className="font-extrabold text-[#15803D] bg-white px-1.5 py-0.5 rounded border border-[#BBF7D0] shadow-2xs">+ R$ 17,90</span>, destrave o
+              Por apenas <span className="font-extrabold text-[#15803D] bg-white px-1.5 py-0.5 rounded border border-[#BBF7D0] shadow-2xs">+ R$ 15,90</span>, destrave o
             </p>
 
             <p className="font-editorial text-2xl sm:text-3xl font-black text-[#059669] tracking-tight uppercase my-1.5">
@@ -130,7 +130,7 @@ export const UpsellModal: React.FC<UpsellModalProps> = ({
             className="w-full mt-4 py-3.5 sm:py-4 px-4 bg-[#059669] hover:bg-[#047857] active:scale-[0.99] text-white font-extrabold text-sm sm:text-base rounded-[16px] shadow-[0_6px_20px_rgba(5,150,105,0.32)] hover:shadow-[0_8px_24px_rgba(5,150,105,0.42)] transition-all cursor-pointer text-center uppercase tracking-wide flex flex-col items-center justify-center leading-tight gap-0.5"
           >
             <span>SIM! Quero o Pacote Completo por</span>
-            <span className="text-base sm:text-lg font-black text-amber-200">+ R$ 17,90</span>
+            <span className="text-base sm:text-lg font-black text-amber-200">+ R$ 15,90</span>
           </a>
 
           {/* 5. BOTÃO SECUNDÁRIO (CONTINUAR COM PACOTE BÁSICO) */}
