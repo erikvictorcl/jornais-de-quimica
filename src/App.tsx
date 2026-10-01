@@ -14,18 +14,9 @@ const Guarantee = lazy(() => import('./components/Guarantee').then(m => ({ defau
 const Footer = lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
 
 export default function App() {
-  const [notification, setNotification] = useState<string | null>(null);
-
   const scrollToOffers = () => {
     const el = document.getElementById('ofertas');
     el?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleSelectPlan = (planName: string) => {
-    setNotification(`Opção selecionada: ${planName}. O checkout seguro será aberto.`);
-    setTimeout(() => {
-      setNotification(null);
-    }, 4500);
   };
 
   return (
@@ -50,9 +41,7 @@ export default function App() {
       </div>
 
       {/* 6. PLANOS E PREÇOS (R$ 10,00 e R$ 19,90) */}
-      <PricingOffers 
-        onSelectPlan={handleSelectPlan}
-      />
+      <PricingOffers />
 
       {/* COMPONENTES CARREGADOS SOB DEMANDA ABAIXO DA DOBRA */}
       <Suspense fallback={null}>
@@ -77,22 +66,6 @@ export default function App() {
         </div>
       </Suspense>
 
-      {/* TOAST DE NOTIFICAÇÃO */}
-      {notification && (
-        <div 
-          role="status"
-          className="fixed bottom-5 right-5 z-50 max-w-sm bg-[#16332E] text-[#F7F3EA] text-xs sm:text-sm px-4 py-3 rounded-xl shadow-2xl border border-[#102421] flex items-center justify-between gap-3 animate-in fade-in slide-in-from-bottom-2 duration-200"
-        >
-          <span>{notification}</span>
-          <button 
-            type="button" 
-            onClick={() => setNotification(null)}
-            className="text-white/80 hover:text-white font-bold text-xs cursor-pointer"
-          >
-            ✕
-          </button>
-        </div>
-      )}
       {/* NOTIFICAÇÃO FLUTUANTE DE COMPRA DISCRETA */}
       <PurchaseNotification />
     </div>

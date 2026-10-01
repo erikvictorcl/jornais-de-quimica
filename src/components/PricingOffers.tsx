@@ -2,21 +2,15 @@ import React, { useState } from 'react';
 import { Check, X, Clock, Download, Infinity as InfinityIcon, Sparkles } from 'lucide-react';
 import { UpsellModal } from './UpsellModal';
 
-interface PricingOffersProps {
-  onSelectPlan?: (planName: string) => void;
-}
-
-export const PricingOffers: React.FC<PricingOffersProps> = ({ onSelectPlan }) => {
+export const PricingOffers: React.FC = () => {
   const [isUpsellOpen, setIsUpsellOpen] = useState(false);
 
   const handleAcceptUpgrade = () => {
     setIsUpsellOpen(false);
-    onSelectPlan?.('Coleção Completa');
   };
 
   const handleDeclineUpgrade = () => {
     setIsUpsellOpen(false);
-    onSelectPlan?.('Pacote Essencial');
   };
   return (
     <section 
@@ -282,7 +276,6 @@ export const PricingOffers: React.FC<PricingOffersProps> = ({ onSelectPlan }) =>
 
               <a
                 href="https://pay.wiapy.com/HOQYUhHeMhEx"
-                onClick={() => onSelectPlan?.('Coleção Completa')}
                 className="w-full py-3.5 sm:py-4 px-6 bg-[#059669] hover:bg-[#047857] active:scale-[0.99] text-white font-bold text-base sm:text-lg rounded-[14px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-all cursor-pointer text-center uppercase tracking-wide block"
               >
                 QUERO A COLEÇÃO COMPLETA
