@@ -280,7 +280,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                   <div
                     key={paper.id}
                     id={paper.id}
-                    className={`relative shrink-0 w-[110px] sm:w-[180px] md:w-[240px] lg:w-[285px] aspect-[3/4.2] rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.18)] border-2 sm:border-4 border-white transition-all duration-300 select-none pointer-events-none ${paper.rotation} ${paper.translateY} ${paper.zIndex}`}
+                    className={`relative shrink-0 w-[110px] sm:w-[180px] md:w-[240px] lg:w-[285px] aspect-[1/1.45] bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.18)] border-2 sm:border-4 border-white transition-all duration-300 select-none pointer-events-none pt-1 sm:pt-1.5 px-0.5 sm:px-1 flex items-start justify-center ${paper.rotation} ${paper.translateY} ${paper.zIndex}`}
                   >
                     <img
                       src={paper.src.replace('.jpeg', 'l.jpeg')}
@@ -288,11 +288,11 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                       sizes="(max-width: 640px) 110px, (max-width: 1024px) 240px, 285px"
                       alt={paper.alt}
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover select-none pointer-events-none"
+                      className="w-full h-full object-contain object-top select-none pointer-events-none"
                       loading="lazy"
                       decoding="async"
                       width="285"
-                      height="399"
+                      height="414"
                     />
                   </div>
                 ))}

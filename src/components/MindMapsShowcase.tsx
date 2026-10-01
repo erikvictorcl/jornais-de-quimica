@@ -123,12 +123,12 @@ export const MindMapsShowcase: React.FC<MindMapsShowcaseProps> = () => {
       </div>
 
       {/* DOUBLE CONTINUOUS MARQUEE WRAPPER (Water effect container) */}
-      <div className="relative w-full overflow-hidden space-y-4 sm:space-y-6">
+      <div className="relative w-full overflow-hidden space-y-5 sm:space-y-7">
 
         {/* WATER EFFECT LAYER (BLOCO 5: Starts at midpoint of Row 1 and covers down through the bottom of Row 2) */}
         <div 
           aria-hidden="true"
-          className="absolute top-[24%] bottom-0 inset-x-0 pointer-events-none z-10 overflow-hidden flex flex-col justify-between"
+          className="absolute top-[28%] bottom-0 inset-x-0 pointer-events-none z-10 overflow-hidden flex flex-col justify-between"
         >
           {/* Surface Water Line / Rippling Crest (cuts Row 1 cards in half horizontally) */}
           <div className="relative w-full h-3 sm:h-4 shrink-0">
@@ -150,8 +150,8 @@ export const MindMapsShowcase: React.FC<MindMapsShowcaseProps> = () => {
           </div>
         </div>
 
-        {/* FILEIRA 1: Movimento contínuo para a DIREITA */}
-        <div className="relative w-full overflow-hidden py-2 sm:py-3 pointer-events-none select-none">
+        {/* FILEIRA 1: Movimento contínuo para a DIREITA com espaço vertical superior ampliado para evitar corte */}
+        <div className="relative w-full overflow-hidden pt-5 pb-3 sm:pt-7 sm:pb-4 pointer-events-none select-none">
           <div className="animate-marquee-right flex gap-4 sm:gap-6 md:gap-8 items-center pointer-events-none">
             {/* First Set */}
             {row1Covers.map((paper, idx) => (
@@ -173,8 +173,8 @@ export const MindMapsShowcase: React.FC<MindMapsShowcaseProps> = () => {
           </div>
         </div>
 
-        {/* FILEIRA 2: Movimento contínuo para a ESQUERDA */}
-        <div className="relative w-full overflow-hidden py-2 sm:py-3 pointer-events-none select-none">
+        {/* FILEIRA 2: Movimento contínuo para a ESQUERDA com espaço vertical superior ampliado para evitar corte */}
+        <div className="relative w-full overflow-hidden pt-5 pb-3 sm:pt-7 sm:pb-4 pointer-events-none select-none">
           <div className="animate-marquee-left flex gap-4 sm:gap-6 md:gap-8 items-center pointer-events-none">
             {/* First Set */}
             {row2Covers.map((paper, idx) => (
@@ -222,21 +222,21 @@ const CleanNewspaperCard: React.FC<CleanNewspaperCardProps> = ({ paper, index = 
         animation: `water-bob ${duration}s ease-in-out infinite`,
         animationDelay: `${delay}s`,
       }}
-      className="shrink-0 w-[215px] sm:w-[275px] md:w-[325px] lg:w-[365px] bg-white rounded-2xl sm:rounded-[22px] border-2 border-[#E6DFD3] overflow-hidden shadow-[0_10px_28px_rgba(15,82,87,0.10)] p-2 sm:p-2.5 select-none pointer-events-none will-change-transform"
+      className="shrink-0 w-[215px] sm:w-[275px] md:w-[325px] lg:w-[365px] bg-white rounded-2xl sm:rounded-[22px] border-2 border-[#E6DFD3] overflow-hidden shadow-[0_10px_28px_rgba(15,82,87,0.10)] px-2.5 pb-2.5 pt-3.5 sm:px-3 sm:pb-3 sm:pt-4 select-none pointer-events-none will-change-transform"
     >
-      {/* Newspaper Image Canvas - Exact uncropped framing (BLOCO 1: ensures top masthead is never cut) */}
-      <div className="w-full aspect-[1/1.51] rounded-xl sm:rounded-lg overflow-hidden bg-[#FAF6EE] border border-[#E6DFD3]/80 relative shadow-inner p-1 sm:p-1.5 flex items-center justify-center">
+      {/* Newspaper Image Canvas - Moldura vertical ampliada para cima para garantir enquadramento perfeito sem cortes */}
+      <div className="w-full aspect-[1/1.55] sm:aspect-[1/1.56] rounded-xl sm:rounded-lg overflow-hidden bg-[#FAF6EE] border border-[#E6DFD3]/80 relative shadow-inner pt-3 pb-1.5 px-1.5 sm:pt-4 sm:pb-2 sm:px-2 flex items-start justify-center">
         <img 
           src={paper.imageUrl.replace('.jpeg', 'l.jpeg')} 
           srcSet={`${paper.imageUrl.replace('.jpeg', 'm.jpeg')} 320w, ${paper.imageUrl.replace('.jpeg', 'l.jpeg')} 640w`}
           sizes="(max-width: 640px) 215px, (max-width: 1024px) 325px, 365px"
           alt={paper.alt}
           referrerPolicy="no-referrer"
-          className="w-full h-full object-contain select-none"
+          className="w-full h-full object-contain object-top select-none"
           loading="lazy"
           decoding="async"
           width="325"
-          height="490"
+          height="505"
         />
       </div>
     </div>

@@ -5,6 +5,7 @@ import { QuickBenefits } from './components/QuickBenefits';
 import { MindMapsShowcase } from './components/MindMapsShowcase';
 import { WhatItDelivers } from './components/WhatItDelivers';
 import { PricingOffers } from './components/PricingOffers';
+import { PurchaseNotification } from './components/PurchaseNotification';
 
 // Dynamic code-splitting for below-the-fold components to reduce initial JS payload
 const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })));
@@ -92,6 +93,8 @@ export default function App() {
           </button>
         </div>
       )}
+      {/* NOTIFICAÇÃO FLUTUANTE DE COMPRA DISCRETA */}
+      <PurchaseNotification />
     </div>
   );
 }
